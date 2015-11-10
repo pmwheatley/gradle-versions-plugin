@@ -19,6 +19,7 @@ import com.github.benmanes.gradle.versions.reporter.JsonReporter
 import com.github.benmanes.gradle.versions.reporter.PlainTextReporter
 import com.github.benmanes.gradle.versions.reporter.Reporter
 import com.github.benmanes.gradle.versions.reporter.XmlReporter
+import com.github.benmanes.gradle.versions.reporter.SKGReporter
 import com.github.benmanes.gradle.versions.reporter.result.*
 import groovy.transform.TupleConstructor
 import groovy.transform.TypeChecked
@@ -113,6 +114,9 @@ class DependencyUpdatesReporter {
         break
       case 'xml':
         reporter = new XmlReporter(project, revision)
+        break
+      case 'skg':
+        reporter = new SKGReporter(project, revision)
         break
       default:
         reporter = new PlainTextReporter(project, revision)
