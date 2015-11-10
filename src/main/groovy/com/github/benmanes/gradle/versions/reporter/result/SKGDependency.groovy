@@ -9,5 +9,4 @@ import groovy.transform.TupleConstructor
 class SKGDependency {
   String name
   String version
-  String license
 }
