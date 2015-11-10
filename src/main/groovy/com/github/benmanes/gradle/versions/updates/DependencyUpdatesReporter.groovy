@@ -107,6 +107,12 @@ class DependencyUpdatesReporter {
 
   def Reporter getOutputReporter(def formatter) {
     def reporter
+    def config_path
+
+    if (formatter.toString().split(':').size() > 0) {
+      config_path = formatter.toString().split(':')[1]
+      formatter = formatter.toString().split(':')[0]
+    }
 
     switch (formatter) {
       case 'json':
@@ -116,7 +122,7 @@ class DependencyUpdatesReporter {
         reporter = new XmlReporter(project, revision)
         break
       case 'skg':
-        reporter = new SKGReporter(project, revision)
+        reporter = new SKGReporter(project, revision, config_path)
         break
       default:
         reporter = new PlainTextReporter(project, revision)
