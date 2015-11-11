@@ -1,0 +1,21 @@
+package net.skyscanner.gradle.skg.plugin.reporter
+
+import net.skyscanner.gradle.skg.plugin.reporter.result.Result
+
+/**
+ * An interface for reporters.
+ *
+ * @author Zenedith (zenedith@wp.pl)
+ */
+interface Reporter {
+  /**
+   * Writes the result to the output target
+   *
+   * @param target The target, usually a {@link PrintStream}
+   * @param result the result of the dependency update analysis
+   * @see Result
+   */
+  def write(target, Result result)
+
+  def getFileName()
+}

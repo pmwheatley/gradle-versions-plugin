@@ -2,8 +2,8 @@ apply plugin: 'groovy'
 apply plugin: 'nexus'
 apply plugin: 'codenarc'
 
-group = 'com.github.ben-manes'
-version = '0.12-SKG'
+group = 'net.skyscanner.gradle'
+version = '0.12'
 
 sourceCompatibility = '1.6'
 
