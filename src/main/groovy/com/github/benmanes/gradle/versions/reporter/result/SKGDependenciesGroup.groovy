@@ -8,10 +8,6 @@ import groovy.transform.TupleConstructor
  */
 @TupleConstructor
 class SKGDependenciesGroup {
-
-	String id
-	String name
-
 	List<SKGDependency> dependencies = []
 	List<SKGDependencyOutdated> outdated = []
 }

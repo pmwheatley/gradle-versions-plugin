@@ -8,9 +8,6 @@ import groovy.transform.TupleConstructor
 @TupleConstructor
 class SKGResult {
 
-	String id
-	String name
-
 	SKGDependenciesGroup current
 
 	def initFromResult(result) {
@@ -28,6 +25,6 @@ class SKGResult {
 			skgOutdated.add(new SKGDependencyOutdated(name: "${it.group}:${it.name}", version: it.version, latest_version: it.available.release))
 		}
 
-		current = new SKGDependenciesGroup(dependencies: skgDependencies, outdated: skgOutdated, id: id, name: name)
+		current = new SKGDependenciesGroup(dependencies: skgDependencies, outdated: skgOutdated)
 	}
 }
